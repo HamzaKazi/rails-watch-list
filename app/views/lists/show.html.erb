@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+
+<p><strong>List</strong></p>
+
+<ul class="list-group">
+  <% @list.movies.each do |movie| %>
+    <li class="list-group-item">
+    <%= movie.title %>
+    <%= movie.overview %>
+    <%= link_to "Delete",
+      list_path(list),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</li>
+  <% end %>
+</ul>
+<br>
+
+<div>
+  <%= link_to "Edit this list", edit_list_path(@list) %> |
+  <%= link_to "Back to lists", lists_path %>
+
+  <%= button_to "Destroy this list", @list, method: :delete %>
+</div>

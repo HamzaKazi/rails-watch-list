@@ -1,0 +1,8 @@
+<div id="bookmarks">
+  <% @bookmarks.each do |bookmark| %>
+    <%= render "bookmarks/bookmarks", bookmark: bookmark %>
+    <p>
+      <%= link_to "Show this bookmark", bookmark %>
+    </p>
+  <% end %>
+</div>
